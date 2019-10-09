@@ -3,8 +3,10 @@ import styled from 'styled-components'
 
 import { purple, lightGray,fushia } from '../styles/utilities';
 import Inpout from '../components/Inscription/Inpout';
-import '../components/Inscription/Inpout.css'
+import '../components/Inscription/inpout.css'
 import Layout from '../components/layout';
+import Congrats from '../pages/congrats'
+import Login from '../pages/login'
 
 import {
     BrowserRouter as Router,
@@ -117,13 +119,22 @@ const DocStarted = () => {
                         <Inpout Label="Confirm Password" />
                         </div>
                     </StyledFormulaire>
+
+                    <Router>
                     <StyledSignIn>
                         <h3> Already have an account?</h3>
-                        <StyledLink to="/login"> Sign In </StyledLink>
+                        <StyledLink to="/Login"> Sign In </StyledLink>
                     </StyledSignIn>
-                    <Link to="/congrats">
+                    <Link to="/Congrats">
                         <StyledIn type="submit" value="Register" />
                     </Link>
+
+                    <Switch>
+                         <Route exact path="/Congrats"> <Congrats /></Route>
+                         <Route exact path="/login"> <Login /></Route>
+                     </Switch>
+
+                     </Router>
                 </StyledForm>
             </StyledContent>
         </StyledStep>

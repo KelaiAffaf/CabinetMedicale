@@ -2,9 +2,19 @@ import React from 'react';
 import SEO from "../components/seo"
 import styled from 'styled-components'
 // import { purple,gray, dark } from '../../styles/utilities';
-import { Link } from "gatsby"
+
 import Layout from "../components/layout"
 import './login.css'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+
+
+  import Start from '../pages/Start'
+
 const StyledLogin = styled.div`
 
     background: white;
@@ -178,7 +188,16 @@ const Login = () => (
                 <PswStyle> forgot your password? </PswStyle>
                 <StyledSignUp>
                     <PswStyle> Don't have an account?</PswStyle>
+                    <Router>
+
+                   
                     <StyledLink to="/sign-up"> Sign Up </StyledLink>
+                    <Switch>
+                         <Route exact path="/sign-up"> <Start/></Route>
+                         
+                     </Switch>
+
+                    </Router>
                 </StyledSignUp>
             </StyledFooter>
         </StyledLogin>

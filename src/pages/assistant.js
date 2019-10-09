@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { purple, lightGray,fushia } from '../styles/utilities';
 import Inpout from '../components/Inscription/Inpout';
-import '../components/Inscription/Inpout.css'
+import '../components/Inscription/inpout.css'
 import Layout from '../components/layout';
 import Congrats from '../pages/congrats'
 import Login from '../pages/login'

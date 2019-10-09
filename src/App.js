@@ -80,23 +80,15 @@ function App() {
         <StyledH1>MS Doc Application gestion cabinet médical</StyledH1>  
         </div> 
         
-        
-        <Router>
-        <div>
-              <StyledLink to="/">
+              <StyledLink to="/Start">
               <Button>Start</Button>
               </StyledLink>
-
-
-              <Switch>
-                <Route exact path="/">
-                  <Start />
-                </Route>
-              </Switch>
-              </div>
-              </Router>
+              
+              
         
         </InContaine>
+
+        
     
     </Container>
     
