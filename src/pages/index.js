@@ -1,23 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-
-//import { Link } from "gatsby"
-import photo from "./images/medecin1.svg"
-import Layout from "./components/layout"
-//import Image from "../components/image"
-//import SEO from "../components/seo"
+import React from "react"
+import { Link } from "gatsby"
+import photo from "../images/medecin1.svg"
+import Layout from "../components/layout"
+import Image from "../components/image"
+import SEO from "../components/seo"
 import styled from 'styled-components'
-import Start from './pages/Start'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+ import {navigate} from 'gatsby'
+ import 'antd/dist/antd.css';
 
-
+import Scrollbar from 'react-custom-scrollbars'
+//<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
 const InContaine=styled.div`
 display: grid;
 grid-column-gap: 600px;
@@ -67,10 +59,12 @@ margin-top: 58px;
      text-decoration: none;
  }
  `;
-function App() {
-  return (
-    <Layout>
+const IndexPage = () => (
     
+  
+  <Layout>
+    <SEO title="Home" />
+
     <Container>
         <div>
         <img src={photo}></img>
@@ -79,22 +73,14 @@ function App() {
         <div>
         <StyledH1>MS Doc Application gestion cabinet médical</StyledH1>  
         </div> 
-        
-        
-        <Router>
         <div>
-              <StyledLink to="/">
-              <Button>Start</Button>
-              </StyledLink>
+        
+         <StyledLink  to="/Start">
+         
+         <Button>Start</Button>
 
-
-              <Switch>
-                <Route exact path="/">
-                  <Start />
-                </Route>
-              </Switch>
-              </div>
-              </Router>
+         </StyledLink>
+        </div>
         
         </InContaine>
     
@@ -104,7 +90,6 @@ function App() {
     
     
   </Layout>
-  );
-}
+)
 
-export default App;
+export default IndexPage

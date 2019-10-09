@@ -2,14 +2,12 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components'
-//import { DropdownItem } from 'styled-dropdown-component'
+import { DropdownItem } from 'styled-dropdown-component'
 //import { lightBleu, darkBleu, bleu, blue } from '../styles/colors'
 
 //import SimpleDropDown from './dorpDown'
 //import {Josefin} 'gatsby-plugin-prefetch-google-fonts'
 import { ModalProvider, BaseModalBackground } from "styled-react-modal"
-// <ModalProvider backgroundComponent={FadingBackground}></ModalProvider>
-
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,16 +16,11 @@ import {
   } from "react-router-dom";
 
 
-
-
-
-
-
 const StyledLogo = styled.div`
     display: flex;
-    align-content: space-between;
-    margin: 0.8rem 0.8rem;
-    width: 22%;
+    align-content: flex-start;
+    margin: 3rem 2rem;
+    width:20%;
     
 `;
 
@@ -41,6 +34,8 @@ const LogoContainer = styled.div`
     }
 `;
 const StyledHeader =styled.div `
+    disply:flex;
+
     font-size: 1 rem;
     font-family: 'Josefin Sans', sans-serif;
     letter-spacing: 0.1rem;
@@ -50,6 +45,7 @@ const StyledHeader =styled.div `
     align-items: center;
     background-color:#444444;
     height: 70px;
+    font-family:'Josefin Sans' ;
     justify-content: space-between;
     * {
         margin: 0;
@@ -57,8 +53,7 @@ const StyledHeader =styled.div `
     nav {
         display: flex;
         align-items: center;
-        text-transform: capitalize;
-        font-size: 22px;
+        text-transform: uppercase;
          
         @media (max-width: 76.7em) {
             display: none;
@@ -71,22 +66,26 @@ const StyledHeader =styled.div `
         }
         position: relative;
         text-decoration: none;
-        color:white;
+        color:black;
         font-weight: 600;
         &:hover{
-            color:#E2007A;
+            color:#09E200;
             cursor: pointer;
+        }
+        Styledslogo{
+            margin-left:0px;
         }
     }
     
 
 `;
 const Styledslogo =styled.h1`
-    font-family:'Josefin Sans' ;
-    color:#E2007A;
+    
     width:100%;
-    font-size:66px;
-    padding-top:13px;
+    h1{
+        font-family:'Josefin Sans' ;
+        color:#09E200;
+    }
 
 
 `;
@@ -100,43 +99,26 @@ const FadingBackground = styled(BaseModalBackground)`
 `;
 
 /////////////////////////////////////////////////////////////////////////////////////////////
-const Header = () => (
+const Header2 = () => (
    <StyledHeader>
 
       <StyledLogo>
-
                 <LogoContainer>
-                    <img src={require("../images/cardiogram.svg")} alt='logo'/>
+                    <img src={require("../../images/cardiogram_V.svg")} alt='logo'/>
                 </LogoContainer>
                 
        </StyledLogo>
-            
-
-           
-            
-                   <Styledslogo>MS Doc</Styledslogo>
-                
+            <Styledslogo >
+                   <h1>Dossier du Patient</h1>
+                </Styledslogo>
 
             <StyledMenu>
-
                 <nav>
-                   
-                <Router> 
-                    <Link to="/"> Home </Link>
+                   <Link to="/"> Home </Link>
+                   <Link to="/"> Enregistrer </Link>
+                   <Link to="/"> Annler </Link>
                     
-                    <Link to="/resources"> Resources </Link>
-                    <Link to="/blog"> Blog </Link>
-                    
-                    <Link to="/contact"> Contact </Link>
-
-
-                                        
-
-                    </Router> 
                 </nav>
-                
-
-
             </StyledMenu>
     
             </StyledHeader>
@@ -144,4 +126,4 @@ const Header = () => (
 
 
 
-export default Header
+export default Header2;
