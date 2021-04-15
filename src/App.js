@@ -83,17 +83,11 @@ function App() {
               <StyledLink to="/Start">
               <Button>Start</Button>
               </StyledLink>
-              
-              
-        
+      
         </InContaine>
-
-        
-    
+  
     </Container>
-    
-    
-    
+
     
   </Layout>
   );
